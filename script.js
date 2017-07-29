@@ -3,19 +3,30 @@ $(document).ready(function(){
     generateQuote();
     
     $("#generate").on("click", function(){
+        $("#quote .text").html('<p class="spinner"><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i></p>');
         generateQuote();
+    })
+
+
+    $(window).keypress(function (e) {
+      if (e.keyCode === 0 || e.keyCode === 32) {
+        e.preventDefault();
+        
+        generateQuote();
+      }
     })
 })
 
 function generateQuote()
 {
-    $("#quote .col.text").html('<p class="spinner"><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i></p>');
-    // var url = "https://talaikis.com/api/quotes/random/";
-    var url = "https://api.adviceslip.com/advice";
+    var url = "http://quotes.stormconsultancy.co.uk/random.json";
     
     $.getJSON(url, function(q) {
-        $("#quote .col.text").hide().html("<p>" + q.slip.advice + "</p>").fadeIn('2000');
-        $("a#twitter").attr("href", "https://twitter.com/intent/tweet?text=" + q.slip.advice);
-        // $("#quote .col.text").hide().html("<p>" + q.quote + "</p><p class=\"author\">&mdash; " + q.author + "</p>").fadeIn('2000');
+        // q.author, q.id, q.permalink, q.quote
+        $("#quote .text").hide().html("<p>" + q.quote + "</p>").fadeIn('slow');
+        $("#quote .author").hide().html("&mdash; " + q.author + "").fadeIn('2000');
+        
+        $("a#btn-twitter").attr("href", "https://twitter.com/intent/tweet?text=" + q.quote);
+    
     });
 }

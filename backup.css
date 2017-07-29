@@ -1,0 +1,135 @@
+html {
+  box-sizing: border-box;
+}
+
+/* - BG Colors - */
+/**
+ * white: #FFF; white
+ * red: #ed6a5a; Burnt Sienna
+ * flesh: #f4f1bb; Sidecar
+ * blue: #9bc1bc; Shadow Green
+ * bluer: #5ca4a9; Breaker Bay
+ * gray: #e6ebe0; Green White
+ */
+
+.fleft {float: left;}
+.fright {float: right;}
+.clear {clear: both;}
+
+body {
+  background-color: #e6ebe0;
+  font-family: 'Old Standard TT', serif;
+  margin: 0;
+}
+
+#quote {
+  color: #FFF;
+  background-color: #ed6a5a; 
+  font-size: 3em;
+  margin-top: 1em;
+  padding: 1em;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.1);
+  -moz-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.1);
+}
+
+  #quote .text{
+    margin: 0;
+    word-wrap: break-word;
+    text-align: center;
+  }
+
+  #quote p {
+    margin: 0;
+  }
+
+  #quote .spinner{
+    text-align: center;
+    margin-top: 100px;
+  }
+
+  #quote hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
+  }
+
+#copy-clipboard {
+  color: #424141;
+}
+
+.author {
+  margin-top: 3em;
+  font-size: .4em;
+  vertical-align: middle;
+  text-align: right;
+}
+
+.buttons {
+  padding-left: 10px;
+  text-align: center;
+}
+
+  .buttons a:hover {
+    cursor: pointer;
+  }
+
+#quote:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#generate {
+  padding: 0.3em 0.5em 0.1em;
+  display: inline-block;
+  border: 5px solid #FFF;
+  text-transform: uppercase;
+}
+  #generate:hover {
+    color: #ed6a5a;
+    background-color: #FFF;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.1);
+  }
+
+#btn-twitter {
+  color: #0074D9;
+  width: auto;
+  text-decoration: none;
+}
+
+  #btn-twitter:hover,
+  #copy-clipboard:hover
+  {
+    cursor: pointer;
+    color: #FFF;
+  }
+
+footer {
+  padding: 0em 2.4em;
+}
+
+/* - Media queries - */
+
+@media (max-width: 768px) {
+ #quote {
+    font-size: 2em;    
+  }
+
+  .author {
+    font-size: 0.7em;
+  }
+}
+
+@media (max-width: 575px) {
+  #quote {
+    font-size: 2em;
+  }
+
+  .author{
+    font-size: 0.7em;
+  }
+}

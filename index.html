@@ -1,36 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Testing</title>
+	<title>The Quote Machine</title>
 	
-	<!-- <link rel="stylesheet" type="text/css" href="https://v4-alpha.getbootstrap.com/dist/css/bootstrap.min.css"> -->
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link href="https://fonts.googleapis.com/css?family=Sanchez" rel="stylesheet">
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <meta charset="utf-8">
 
-	<script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
-	<script type="text/javascript" src="script.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://v4-alpha.getbootstrap.com/dist/css/bootstrap-grid.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
 </head>
 <body>
-    <div id="quote">
-      	<div class="col text">
-      		<p></p>
-      	</div>
-      	<div class="col button">
-      		<button id="generate" />Generate a Random Quote</button>
-      		<a 
-            id="twitter" 
-            class="twitter-share-button" 
-            href="https://twitter.com/intent/tweet"
-            target="_blank">
-            <i class="fa fa-twitter"></i>
-          </a>
-      	</div>
-    </div>
+  <div class="container">
+    <div class="col-md-12">
+      <blockquote id="quote">
+          <div class="text">
+          </div>
+          <div class="author"></div>
+          <hr />
+          
+          <div class="buttons">
+            <a id="generate">
+              Generate Quote
+              <!-- <i class="fa fa-refresh"></i> -->
+            </a>
+            <a id="btn-twitter" class="twitter-share-button" href="https://twitter.com/intent/tweet" title="Tweet!" target="_blank"><i class="fa fa-twitter"></i></a>
+          </div>
+      </blockquote>  
+      
+      <footer>
+        <div class="fleft">
+          Made by <a href="https://github.com/rldcuevas" target="_blank">Roy Cuevas</a>
+        </div>
+        <div class="fright">
+          Pressing <em>Space</em> will also generate a new quote.
+        </div>
+      </footer>
+    </div>  
+  
+  </div>
     
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="script.js"></script>
+
 </body>
 </html>
