@@ -19,7 +19,7 @@ $(document).ready(function(){
 
 function generateQuote()
 {
-    var url = "http://quotes.stormconsultancy.co.uk/random.json";
+    var url = "https://quotes.stormconsultancy.co.uk/random.json";
     
     $.getJSON(url, function(q) {
         // q.author, q.id, q.permalink, q.quote
