@@ -19,14 +19,36 @@ $(document).ready(function(){
 
 function generateQuote()
 {
-    var url = "http://quotes.stormconsultancy.co.uk/random.json";
+    // var url = "http://quotes.stormconsultancy.co.uk/random.json";
+    var url = "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=";
     
-    $.getJSON(url, function(q) {
-        // q.author, q.id, q.permalink, q.quote
-        $("#quote .text").hide().html("<p>" + q.quote + "</p>").fadeIn('slow');
-        $("#quote .author").hide().html("&mdash; " + q.author + "").fadeIn('2000');
-        
-        $("a#btn-twitter").attr("href", "https://twitter.com/intent/tweet?text=" + q.quote);
-    
+    $.ajax({
+        url: url,
+        success: function(q) {
+            var quote = q[0].content;
+            var author = q[0].title;
+            var quote_in_text = $.parseHTML( quote )[0].innerHTML;
+
+            $("#quote .text").hide().html("<p>" + quote + "</p>").fadeIn('slow');
+            $("#quote .author").hide().html("&mdash; " + author + "").fadeIn('2000');
+            
+            $("a#btn-twitter").attr("href", "https://twitter.com/intent/tweet?text=" + quote_in_text);
+        },
+        cache: false
     });
+
+    /**
+     * Works on HTTP
+     */
+    // $.getJSON(url, function(q) {
+    
+        // var quote = q.quote;
+        // var author = q.author;
+        
+        // $("#quote .text").hide().html("<p>" + quote + "</p>").fadeIn('slow');
+        // $("#quote .author").hide().html("&mdash; " + author + "").fadeIn('2000');
+        
+        // $("a#btn-twitter").attr("href", "https://twitter.com/intent/tweet?text=" + quote);
+    
+    // });
 }
