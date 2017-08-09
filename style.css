@@ -97,7 +97,18 @@ footer a {
     font-size: 2em; }
 
   .author {
-    font-size: 0.7em; } }
+    font-size: 0.7em; } 
+
+  #quote {
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+  }
+
+  #generate {
+    font-size: .7em;
+  }
+}
 @media (max-width: 575px) {
   #quote {
     font-size: 2em; }

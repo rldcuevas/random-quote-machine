@@ -3,7 +3,6 @@ $(document).ready(function(){
     generateQuote();
     
     $("#generate").on("click", function(){
-        $("#quote .text").html('<p class="spinner"><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i></p>');
         generateQuote();
     })
 
@@ -19,7 +18,7 @@ $(document).ready(function(){
 
 function generateQuote()
 {
-    // var url = "http://quotes.stormconsultancy.co.uk/random.json";
+    $("#quote .text").html('<p class="spinner"><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i></p>');
     var url = "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=";
     
     $.ajax({
@@ -40,6 +39,7 @@ function generateQuote()
     /**
      * Works on HTTP
      */
+    // var url = "http://quotes.stormconsultancy.co.uk/random.json";
     // $.getJSON(url, function(q) {
     
         // var quote = q.quote;
